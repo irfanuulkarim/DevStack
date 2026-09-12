@@ -2,9 +2,11 @@ import type { Technology } from "../types/technology";
 
 interface TechnologyCardProps {
     technology: Technology;
+    onAddToStack: (technology: Technology) => void;
+    isSelected: boolean;
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology, onAddToStack, isSelected, }: TechnologyCardProps) => {
     return (
         <article className="flex min-h-71.25 flex-col rounded-xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
             <div className="flex items-start justify-between">
@@ -46,9 +48,14 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
 
                 <button
                     type="button"
-                    className="btn btn-neutral w-full text-xs font-medium"
+                    onClick={() => onAddToStack(technology)}
+                    disabled={isSelected}
+                    className={`btn w-full text-xs font-medium ${isSelected
+                            ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                            : "btn-neutral"
+                        }`}
                 >
-                    Add to Stack
+                    {isSelected ? "✓ Added to Stack" : "Add to Stack"}
                 </button>
 
             </div>
