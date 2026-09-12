@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -6,14 +7,7 @@ function App() {
       <Navbar />
 
       <main>
-        <section
-          id="home"
-          className="flex min-h-screen items-center justify-center"
-        >
-          <h1 className="text-4xl font-bold">
-            Dev Stack Builder
-          </h1>
-        </section>
+        <Hero />
       </main>
     </>
   );
