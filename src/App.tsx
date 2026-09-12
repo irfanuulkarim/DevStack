@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechnologySection from "./components/TechnologySection";
 import type { Technology } from "./types/technology";
+import Footer from "./components/Footer";
 
 function App() {
   const [selectedTechnologies, setSelectedTechnologies] = useState<
@@ -43,6 +44,7 @@ function App() {
           onRemoveAll={removeAllFromStack}
         />
       </main>
+      <Footer />
     </>
   );
 }
