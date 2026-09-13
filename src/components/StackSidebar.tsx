@@ -6,11 +6,7 @@ interface StackSidebarProps {
     onRemoveAll: () => void;
 }
 
-const StackSidebar = ({
-    selectedTechnologies,
-    onRemove,
-    onRemoveAll,
-}: StackSidebarProps) => {
+const StackSidebar = ({ selectedTechnologies, onRemove, onRemoveAll }: StackSidebarProps) => {
     return (
         <aside className="rounded-xl border border-slate-100 bg-white p-5 shadow-sm">
             <div className="flex items-center justify-between">
