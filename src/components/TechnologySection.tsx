@@ -17,7 +17,7 @@ const TechnologySection = ({ selectedTechnologies, onAddToStack, onRemoveFromSta
     useEffect(() => {
         const loadTechnologies = async () => {
             try {
-                const response = await fetch("/src/data/technologies.json");
+                const response = await fetch("/data/technologies.json");
                 const data: Technology[] = await response.json();
 
                 setTechnologies(data);
